@@ -20,3 +20,8 @@ ntpd_start:
     - name: ntpd
 
 {% endif %}
+
+ntp_initalized:
+  grains.present:
+    - name: ntp_initalized
+    - value: True
