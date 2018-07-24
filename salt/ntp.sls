@@ -8,8 +8,8 @@ ntpd:
     - enable: True
 
 # set which ntp server should be listed first
-{% set servers = ['0.centos.pool.ntp.org','1.centos.pool.ntp.org','2.centos.pool.ntp.org','3.centos.pool.ntp.org']  %}
-
+{% set servers = pillar['time_servers'] %}
+  
 # Deploy NTP Configuration File
 deploy the ntp.conf file:
   file.managed:
